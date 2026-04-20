@@ -1,2 +1,2 @@
-# BusTick_Kiosk
+# BusTicket_Kiosk
 버스 예매를 위한 사용자 친화적인 키오스크 시스템입니다. C# WinForms를 사용하여 구현하였으며, 직관적인 UI와 효율적인 예매 로직을 제공합니다.
