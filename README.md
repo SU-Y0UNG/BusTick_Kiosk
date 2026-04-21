@@ -1,9 +1,5 @@
 # 🚌 버스 현장 예매 키오스크
 
-<p align="center">
-  <b>BusTicket_Kiosk</b>
-</p>
-
 ---
 
 <p align="center">
