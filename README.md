@@ -7,10 +7,8 @@
   <img src="https://img.shields.io/badge/WinForms-512BD4?style=flat&logo=.net&logoColor=white"/>
 </p>
 
-<p align="center">
 버스 승차권 예매를 위한 데스크톱 기반 키오스크 시스템<br/>
 C# WinForms 기반으로 직관적인 UI와 효율적인 예매 프로세스를 제공합니다.
-</p>
 
 ---
 
