@@ -1,6 +1,15 @@
 # 🚌 버스 현장 예매 키오스크
 ---
-BusTicket_Kiosk
+## BusTicket_Kiosk
+
+---
+## 🛠️ 기술 스택
+
+<p>
+<img src="https://img.shields.io/badge/C%23-239120?style=flat&logo=csharp&logoColor=white"/>
+<img src="https://img.shields.io/badge/WinForms-512BD4?style=flat&logo=.net&logoColor=white"/>
+</p>
+---
 
 <p align="center">
 버스 승차권 예매를 위한 데스크톱 기반 키오스크 시스템<br/>
@@ -32,13 +41,6 @@ C# WinForms 기반으로 직관적인 UI와 효율적인 예매 프로세스를 
 - <strong>데이터 관리 안정성 확보</strong> : <span style="color:#6b7280;">예매 프로세스를 디지털화하여 데이터 정확성을 높입니다.</span>
 
 ---
-
-## 🛠️ 기술 스택
-
-<p>
-<img src="https://img.shields.io/badge/C%23-239120?style=flat&logo=csharp&logoColor=white"/>
-<img src="https://img.shields.io/badge/WinForms-512BD4?style=flat&logo=.net&logoColor=white"/>
-</p>
 
 **개발 환경**
 - C#
