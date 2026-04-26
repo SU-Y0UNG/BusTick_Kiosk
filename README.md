@@ -40,23 +40,23 @@
 
 | 메인 화면 | 출발지 확인 | 노선 선택 |
 |:---------:|:----------:|:---------:|
-| <img src="screenshot/01_main.png" width="200"/> | <img src="screenshot/02_destination.png" width="200"/> | <img src="screenshot/03_route.png" width="200"/> |
+| <img src="images/01_main.png" width="200"/> | <img src="images/02_destination.png" width="200"/> | <img src="images/03_route.png" width="200"/> |
 
 | 시간 선택 | 좌석 선택 | 결제 |
 |:---------:|:---------:|:----:|
-| <img src="screenshot/04_time.png" width="200"/> | <img src="screenshot/05_seat.png" width="200"/> | <img src="screenshot/06_payment.png" width="200"/> |
+| <img src="images/04_time.png" width="200"/> | <img src="images/05_seat.png" width="200"/> | <img src="images/06_payment.png" width="200"/> |
 
 ### 📱 온라인 예매 발권
 
 | 번호 입력 | 조회 결과 |
 |:---------:|:---------:|
-| <img src="screenshot/07_ticket_input.png" width="200"/> | <img src="screenshot/08_ticket_result.png" width="200"/> |
+| <img src="images/07_ticket_input.png" width="200"/> | <img src="images/08_ticket_result.png" width="200"/> |
 
 ### 💰 환불
 
 | 환불 화면 |
 |:---------:|
-| <img src="screenshot/09_refund.png" width="200"/> |
+| <img src="images/09_refund.png" width="200"/> |
 
 ---
 
@@ -148,7 +148,7 @@ Bus_Kiosk/
 │   │
 │   └── *.Designer.cs / *.resx      # WinForms UI 리소스 파일
 │
-├── screenshot/                     # 화면 캡처 이미지
+├── images/                     # 화면 캡처 이미지
 └── demo/                           # 시연 영상
 ```
 
