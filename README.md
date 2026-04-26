@@ -201,7 +201,7 @@ git clone https://github.com/your-username/Bus_Kiosk.git
 
 ## 🔮 향후 개선 사항
 
-- [ ] 데이터베이스 연동 (SQL Server / SQLite)
+- [ ] 데이터베이스 연동 (MySQL / SQLite)
 - [ ] 카드 결제 단말기 연동
 - [ ] QR 코드 기반 모바일 발권
 - [ ] 관리자 대시보드 (매출 통계, 노선 관리)
