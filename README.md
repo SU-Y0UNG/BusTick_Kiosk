@@ -1,38 +1,215 @@
-# 🚌 버스 현장 예매 키오스크
+# 🚌 버스 키오스크 예매 시스템
 
 <p align="center">
   <img src="https://img.shields.io/badge/C%23-239120?style=flat&logo=csharp&logoColor=white"/>
-  <img src="https://img.shields.io/badge/WinForms-512BD4?style=flat&logo=.net&logoColor=white"/>
+  <img src="https://img.shields.io/badge/.NET-512BD4?style=flat&logo=dotnet&logoColor=white"/>
+  <img src="https://img.shields.io/badge/WinForms-512BD4?style=flat&logo=windows&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Visual%20Studio-5C2D91?style=flat&logo=visualstudio&logoColor=white"/>
 </p>
 
 <p align="center">
-  C# WinForms 기반 데스크톱 키오스크 시스템<br/>
-  목적지 선택 → 좌석 예약 → 결제 → 발권까지 한 번에 처리합니다.
+  C# WinForms 기반 버스 승차권 키오스크 시스템<br/>
+  <b>현장 예매 · 온라인 예매 발권 · 환불</b>까지 한 번에 처리합니다.
 </p>
 
 ---
 
 ## 📌 프로젝트 개요
 
-오프라인 매표소를 방문하지 않고도 버스 승차권 예매 전 과정을 처리할 수 있는 키오스크 시스템입니다.
-직관적인 UI와 자동화된 예매 프로세스를 통해 운영 효율성과 사용자 편의성을 동시에 확보합니다.
+버스 터미널에서 사용하는 **무인 키오스크 시스템**입니다.  
+기존 매표 창구의 대기 시간과 인건비 문제를 해결하고, 직관적인 터치 UI를 통해 누구나 쉽게 승차권을 예매·발권·환불할 수 있습니다.
+
+> **출발지** : 천안 고정  
+> **도착지** : 서울 · 인천 · 강원 · 대전 · 충북 · 전북 · 대구 (7개 권역)
+
+---
+
+## 🎬 시연 영상
+
+<p align="center">
+  <video src="demo/busticketkiosk_demo.mp4" width="400" controls></video>
+</p>
+
+> 영상이 재생되지 않으면 [여기를 클릭](demo/busticketkiosk_demo.mp4)하여 다운로드할 수 있습니다.
+
+---
+
+## 📸 화면 구성
+
+### 🎫 현장 예매 흐름
+
+| 메인 화면 | 출발지 확인 | 노선 선택 |
+|:---------:|:----------:|:---------:|
+| <img src="screenshot/01_main.png" width="200"/> | <img src="screenshot/02_destination.png" width="200"/> | <img src="screenshot/03_route.png" width="200"/> |
+
+| 시간 선택 | 좌석 선택 | 결제 |
+|:---------:|:---------:|:----:|
+| <img src="screenshot/04_time.png" width="200"/> | <img src="screenshot/05_seat.png" width="200"/> | <img src="screenshot/06_payment.png" width="200"/> |
+
+### 📱 온라인 예매 발권
+
+| 번호 입력 | 조회 결과 |
+|:---------:|:---------:|
+| <img src="screenshot/07_ticket_input.png" width="200"/> | <img src="screenshot/08_ticket_result.png" width="200"/> |
+
+### 💰 환불
+
+| 환불 화면 |
+|:---------:|
+| <img src="screenshot/09_refund.png" width="200"/> |
+
+---
+
+## 🔄 사용자 흐름 (Flow)
+
+```
+┌─────────────┐
+│  메인 화면   │  ← 현장 예매 / 온라인 예매 발권 / 환불 선택
+└──────┬──────┘
+       │
+       ├─── 🎫 현장 예매
+       │    ① 출발지 확인 (천안)
+       │    ② 도착지 권역 선택 (서울·인천·강원 등)
+       │    ③ 세부 노선 선택
+       │    ④ 시간 선택
+       │    ⑤ 좌석 선택 (실시간 잔여 좌석 확인)
+       │    ⑥ 결제
+       │    ⑦ 승차권 발권
+       │
+       ├─── 📱 온라인 예매 발권
+       │    ① 핸드폰 번호 입력 (터치 키패드)
+       │    ② 예매 내역 조회
+       │    ③ 승차권 선택 및 발권
+       │
+       └─── 💰 환불
+            ① 승차권 투입
+            ② 환불 규정 확인
+            ③ 환불 처리 완료
+```
 
 ---
 
 ## ⚙️ 주요 기능
 
+### 🎫 현장 예매
 | 기능 | 설명 |
 |------|------|
-| **UI/UX** | 노선 검색부터 발권·환불까지 일관된 흐름의 WinForms 인터페이스 |
-| **좌석 관리** | 실시간 잔여 좌석 확인 및 중복 예약 방지 |
-| **예매 자동화** | 좌석 정보·결제 데이터 연동으로 예약~발권 자동 처리 |
-| **환불 처리** | 취소 시점별 수수료 계산 및 환불 정보 시각화 |
-| **QR 코드 연동** | QR 코드 생성으로 모바일 환경과의 확장성 확보 |
+| **권역별 목적지 선택** | 서울·인천·강원·대전·충북·전북·대구 7개 권역에서 세부 노선 선택 |
+| **시간 선택** | 출발 시간대를 선택하여 예매 |
+| **좌석 선택** | 28석 버스 좌석 배치도에서 원하는 좌석을 터치로 선택 / 해제 |
+| **결제 처리** | 선택 좌석 정보와 금액을 확인 후 결제 진행 |
+
+### 📱 온라인 예매 발권
+| 기능 | 설명 |
+|------|------|
+| **터치 키패드** | 키오스크 환경에 최적화된 숫자 키패드로 전화번호 입력 |
+| **자동 포맷** | 입력 시 `010-0000-0000` 형태로 자동 하이픈 삽입 |
+| **예매 내역 조회** | 전화번호 기반으로 예매 내역 검색 및 리스트 표시 |
+| **선택 발권** | 원하는 예매 건을 선택하여 개별 발권 |
+
+### 💰 환불
+| 기능 | 설명 |
+|------|------|
+| **환불 규정 안내** | 취소 시점별 수수료 기준을 화면에 시각적으로 안내 |
+| **승차권 투입** | 투입구에 승차권을 넣어 환불 처리 |
+| **환불 완료** | 환불 버튼 클릭 시점 기준으로 수수료 계산 후 환불 |
+
+---
+
+## 🗂️ 프로젝트 구조
+
+```
+Bus_Kiosk/
+├── README.md
+├── Kiosk.slnx
+├── Kiosk/
+│   ├── Program.cs                  # 앱 진입점
+│   ├── Choiceservice.cs            # 메인 화면 (현장예매 / 온라인발권 / 환불)
+│   │
+│   ├── 🎫 현장 예매
+│   │   ├── Destination.cs          # 출발지 확인 화면
+│   │   ├── DesnationChoice.cs      # 도착지 권역 선택 (7개 권역)
+│   │   ├── ChoiceSeoul.cs          # 서울 방면 세부 노선
+│   │   ├── ChoiceIncheon.cs        # 인천 방면 세부 노선
+│   │   ├── ChoiceGangwon.cs        # 강원 방면 세부 노선
+│   │   ├── ChoiceDajeon.cs         # 대전 방면 세부 노선
+│   │   ├── ChoiceChungbuk.cs       # 충북 방면 세부 노선
+│   │   ├── ChoiceJeonbuk.cs        # 전북 방면 세부 노선
+│   │   ├── ChoiceDaegu.cs          # 대구 방면 세부 노선
+│   │   ├── Seat.cs                 # 좌석 선택 화면 (28석)
+│   │   ├── Time.cs                 # 시간 선택
+│   │   └── Payment.cs              # 결제 화면
+│   │
+│   ├── 📱 온라인 예매 발권
+│   │   └── Ticket.cs               # 전화번호 입력 → 예매 조회 → 발권
+│   │
+│   ├── 💰 환불
+│   │   └── Refund.cs               # 환불 규정 안내 및 환불 처리
+│   │
+│   └── *.Designer.cs / *.resx      # WinForms UI 리소스 파일
+│
+├── screenshot/                     # 화면 캡처 이미지
+└── demo/                           # 시연 영상
+```
 
 ---
 
 ## 🛠️ 기술 스택
 
-- **Language** : C#
-- **Framework** : .NET Framework (WinForms)
-- **IDE** : Visual Studio
+| 구분 | 기술 |
+|------|------|
+| **Language** | C# |
+| **Framework** | .NET 6+ (WinForms) |
+| **IDE** | Visual Studio 2022 |
+| **UI** | Windows Forms (터치 최적화) |
+
+---
+
+## 🚀 실행 방법
+
+```bash
+# 1. 저장소 클론
+git clone https://github.com/your-username/Bus_Kiosk.git
+
+# 2. Visual Studio에서 Kiosk.slnx 열기
+
+# 3. F5 또는 Ctrl+F5로 실행
+```
+
+> **요구 사항** : .NET 6.0 SDK 이상, Windows OS
+
+---
+
+## 📈 기대 효과
+
+### 운영 효율성
+- **인건비 절감** — 무인 키오스크로 매표 인력 최소화
+- **24시간 운영** — 영업 시간 제약 없이 상시 예매 가능
+- **대기 시간 단축** — 다수 키오스크 동시 운영으로 혼잡 해소
+
+### 사용자 편의성
+- **직관적 터치 UI** — 연령대에 관계없이 누구나 쉽게 조작
+- **온라인 예매 연동** — 모바일 예매 후 현장에서 바로 발권
+- **실시간 좌석 확인** — 좌석 배치도에서 잔여석을 한눈에 파악
+
+### 확장 가능성
+- **DB 연동** — 현재 샘플 데이터를 실제 데이터베이스로 교체 가능
+- **QR 코드** — 모바일 티켓 발권으로 종이 승차권 절감
+- **다중 터미널** — 여러 터미널에 동일 시스템 배포 가능
+
+---
+
+## 🔮 향후 개선 사항
+
+- [ ] 데이터베이스 연동 (SQL Server / SQLite)
+- [ ] 카드 결제 단말기 연동
+- [ ] QR 코드 기반 모바일 발권
+- [ ] 관리자 대시보드 (매출 통계, 노선 관리)
+- [ ] 다국어 지원 (영어, 중국어, 일본어)
+- [ ] 장애인 접근성 개선 (음성 안내, 고대비 모드)
+
+---
+
+## 📄 라이선스
+
+This project is for educational purposes.
