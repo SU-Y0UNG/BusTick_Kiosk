@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="ChoiceChungbuk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ChoiceDaegu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ChoiceDajeon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ChoiceGangwon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ChoiceIncheon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ChoiceJeonbuk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ChoiceSeoul.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Choiceservice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DesnationChoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Destination.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Payment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Refund.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Seat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Seat2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Ticket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Time.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Time2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
